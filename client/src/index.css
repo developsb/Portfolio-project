@@ -1,0 +1,25 @@
+:root {
+  color-scheme: light;
+  color: #111111;
+  background-color: #ffffff;
+  font-family: system-ui, 'Segoe UI', Roboto, sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+h1, h2 {
+  font-weight: 500;
+  color: #111111;
+}
+
+p {
+  margin: 0;
+}
