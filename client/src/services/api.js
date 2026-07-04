@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_BASE_URL = 'http://portfolio-backend-sambath.ap-southeast-1.elasticbeanstalk.com/api';
+const API_BASE_URL = 'https://d2xpe04j4jy563.cloudfront.net/api';
 
 export const getProjects = async () => {
   const response = await axios.get(`${API_BASE_URL}/projects`);
