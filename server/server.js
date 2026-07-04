@@ -9,7 +9,13 @@ const messageRoutes = require('./routes/messageRoutes');
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-app.use(cors());
+const allowedOrigins = process.env.CLIENT_URL
+  ? [process.env.CLIENT_URL, 'http://localhost:5173']
+  : ['http://localhost:5173'];
+
+app.use(cors({
+  origin: allowedOrigins,
+}));
 app.use(express.json());
 
 mongoose.connect(process.env.MONGO_URI)

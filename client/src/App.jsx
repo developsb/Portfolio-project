@@ -10,16 +10,24 @@ import Admin from './pages/Admin';
 import AdminMessages from './pages/AdminMessages';
 import './App.css';
 
+function OnePage() {
+  return (
+    <>
+      <Home />
+      <About />
+      <Skills />
+      <Projects />
+      <Contact />
+    </>
+  );
+}
+
 function App() {
   return (
     <div className="App">
       <Navbar />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/skills" element={<Skills />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/contact" element={<Contact />} />
+        <Route path="/" element={<OnePage />} />
         <Route path="/admin" element={<Admin />} />
         <Route path="/admin/messages" element={<AdminMessages />} />
       </Routes>

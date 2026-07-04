@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth; /* makes anchor jumps (#about, #skills, etc.) animate instead of instant-jump */
+}
+
 :root {
   color-scheme: light;
   color: #111111;

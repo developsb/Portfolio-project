@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_BASE_URL = 'http://localhost:5000/api';
+const API_BASE_URL = 'http://portfolio-backend-sambath.ap-southeast-1.elasticbeanstalk.com/api';
 
 export const getProjects = async () => {
   const response = await axios.get(`${API_BASE_URL}/projects`);

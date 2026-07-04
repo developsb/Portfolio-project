@@ -5,6 +5,9 @@
   padding: 1rem 2rem;
   background-color: #ffffff;
   border-bottom: 1px solid #e0e0e0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 .navbar-logo {
@@ -121,38 +124,47 @@
 }
 
 .skills {
-  max-width: 900px;
+  max-width: 1000px;
   margin: 0 auto;
   padding: 3rem 2rem;
   text-align: center;
 }
 
 .skills-grid {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: 1.5rem;
-  justify-content: center;
   margin-top: 1.5rem;
 }
 
 .skill-card {
   border: 1px solid #e0e0e0;
+  border-top: 3px solid #e0e0e0; /* plain gray by default */
   border-radius: 8px;
   padding: 1.5rem;
-  width: 200px;
   text-align: left;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: border-top-color 0.2s ease;
+}
+
+.skill-card:hover {
+  border-top-color: var(--accent); /* shows the category color only on hover */
 }
 
 .skill-card h3 {
   margin-top: 0;
+  margin-bottom: 1rem;
   color: #111111;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.05rem;
 }
 
 .skill-items {
   display: flex;
   flex-direction: column;
-  gap: 0.6rem;
+  gap: 0.7rem;
 }
 
 .skill-item {
@@ -160,14 +172,95 @@
   align-items: center;
   gap: 0.6rem;
   color: #333333;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
 }
 
 .skill-icon {
   display: flex;
   align-items: center;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   color: #111111;
+}
+
+.skill-name {
+  flex: 1;
+}
+
+.skill-status {
+  font-size: 0.7rem;
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.status-learning {
+  background: #f3e6c4;
+  color: #7a5c12;
+}
+
+.status-beginner {
+  background: #e0dcae;
+  color: #5c5410;
+}
+
+.status-intermediate {
+  background: #cdeee6;
+  color: #106b58;
+}
+
+.status-advanced {
+  background: #f3d4cf;
+  color: #8a2e22;
+}
+
+.status-legend {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  color: #444;
+}
+
+.legend-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.dot-advanced {
+  background: #b03a2e;
+}
+
+.dot-intermediate {
+  background: #16a085;
+}
+
+.dot-beginner {
+  background: #a89b1f;
+}
+
+.dot-learning {
+  background: #d4a017;
+}
+
+@media (max-width: 900px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 550px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .projects {
@@ -178,18 +271,28 @@
 }
 
 .projects-grid {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
-  justify-content: center;
   margin-top: 1.5rem;
+}
+
+@media (max-width: 900px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .project-card {
   border: 1px solid #e0e0e0;
   border-radius: 8px;
   padding: 1.5rem;
-  width: 260px;
   text-align: left;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 }
@@ -483,4 +586,87 @@
 .social-button:hover {
   background-color: #111111;
   color: #ffffff;
+}
+
+.navbar-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  color: #111111;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .navbar-toggle {
+    display: block;
+  }
+
+  .navbar-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e0e0e0;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+    gap: 0;
+    padding: 0 2rem;
+  }
+
+  .navbar-links.open {
+    max-height: 300px;
+    opacity: 1;
+    padding: 1rem 2rem;
+  }
+
+  .navbar-links li {
+    padding: 0.6rem 0;
+  }
+
+  .navbar {
+    position: relative;
+  }
+}
+
+.home {
+  text-align: center;
+  padding: 4rem 2rem;
+  scroll-margin-top: 70px; /* offsets scroll so sticky navbar doesn't cover the top */
+}
+
+.about {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  text-align: left;
+  scroll-margin-top: 70px;
+}
+
+.skills {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  text-align: center;
+  scroll-margin-top: 70px;
+}
+
+.projects {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  text-align: center;
+  scroll-margin-top: 70px;
+}
+
+.contact {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  text-align: center;
+  scroll-margin-top: 70px;
 }

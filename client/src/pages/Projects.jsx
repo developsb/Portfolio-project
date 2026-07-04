@@ -20,13 +20,14 @@ function Projects() {
     fetchProjects();
   }, []);
 
-  if (loading) return <p className="status-message">Loading projects...</p>;
-  if (error) return <p className="status-message error">{error}</p>;
-
   return (
-    <section className="projects">
+    <section id="projects" className="projects">
       <h2>Projects</h2>
-      {projects.length === 0 ? (
+      {loading ? (
+        <p className="status-message">Loading projects...</p>
+      ) : error ? (
+        <p className="status-message error">{error}</p>
+      ) : projects.length === 0 ? (
         <p className="status-message">No projects added yet.</p>
       ) : (
         <div className="projects-grid">

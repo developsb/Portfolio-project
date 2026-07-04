@@ -1,6 +1,6 @@
 function About() {
   return (
-    <section className="about">
+    <section id="about" className="about">
       <h2>About Me</h2>
       <p>
         I'm studying software engineering, but I'm still exploring different
@@ -28,4 +28,4 @@ function About() {
   );
 }
 
-export default About; 
+export default About;

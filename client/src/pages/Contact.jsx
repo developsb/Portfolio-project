@@ -47,7 +47,7 @@ function Contact() {
   }
 
   return (
-    <section className="contact">
+    <section id="contact" className="contact">
       <h2>Contact Me</h2>
       <p className="contact-intro">Feel free to reach out — I'm always happy to chat.</p>
       
