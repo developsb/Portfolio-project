@@ -670,3 +670,13 @@
   text-align: center;
   scroll-margin-top: 70px;
 }
+
+.not-found {
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.not-found-link {
+  color: #111111;
+  text-decoration: underline;
+}

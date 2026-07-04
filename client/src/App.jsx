@@ -9,6 +9,7 @@ import Contact from './pages/Contact';
 import Admin from './pages/Admin';
 import AdminMessages from './pages/AdminMessages';
 import './App.css';
+import NotFound from './pages/NotFound';
 
 function OnePage() {
   return (
@@ -30,6 +31,7 @@ function App() {
         <Route path="/" element={<OnePage />} />
         <Route path="/admin" element={<Admin />} />
         <Route path="/admin/messages" element={<AdminMessages />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
     </div>
