@@ -124,7 +124,26 @@ Admin-only routes require an `x-admin-key` header matching the server's `ADMIN_K
 
 ## 10. Screenshots
 
-*(Add screenshots of your Home, About, Skills, Projects, Contact, and Admin pages here before final submission.)*
+### Home Page
+![Home Page](./screenshots/home.png)
+
+### About Page
+![About Page](./screenshots/aboutMe.png)
+
+### Skills Page
+![Skills Page](./screenshots/skills.png)
+
+### Projects Page
+![Projects Page](./screenshots/project.png)
+
+### Contact Page
+![Contact Page](./screenshots/contact.png)
+
+### Admin Panel
+![Admin Panel](./screenshots/adminPage.png)
+
+### Mobile View
+![Mobile View](./screenshots/mobileView.png)
 
 ## 11. Live Website URL
 
